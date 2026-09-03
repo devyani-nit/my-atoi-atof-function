@@ -1,0 +1,89 @@
+//  atoi() User defined functions  //
+
+#include<stdio.h>
+int my_atoi(char *);
+int main()
+{
+        char s[20];
+        int num;
+        printf("Enter the String : ");
+        scanf("%s",s);
+
+        num=my_atoi(s);
+
+        printf("%d\n",num);
+}
+int my_atoi(char *p)
+{
+        int i,num=0,sign=1;
+
+        if (p[0]=='-' || p[0]=='+')
+        {
+                if (p[0]=='-')
+                        sign=-1;
+                p++;
+        }
+
+        for (i=0;p[i];i++)
+        {
+                if (p[i]>='0' && p[i]<='9')
+                        num=num*10+(p[i]-'0');
+                else
+                        break;
+        }
+        return num*sign;
+}
+
+
+
+
+
+//  atof() User defined function  //
+
+#include<stdio.h>
+double my_atof(char *);
+int main()
+{
+        char s[20];
+        double num;
+
+        printf("Enter the String : ");
+        scanf("%s",s);
+
+        num=my_atof(s);
+
+        printf("%lf\n",num);
+}
+double my_atof(char *p)
+{
+        double num=0,frac=0,div=1;
+        int i,sign=1,count=0;
+
+        if (p[0]=='-' || p[0]=='+')
+        {
+                if (p[0]=='-')
+                        sign=-1;
+                p++;
+        }
+
+        for (i=0;p[i]>='0' && p[i]<='9';i++)
+                num=num*10+(p[i]-'0');
+
+        if (p[i]=='.')
+        {
+                i++;
+
+                for (;p[i]>='0' && p[i]<='9';i++)
+                {
+                        frac=frac*10+(p[i]-'0');
+                        count++;
+                }
+        }
+
+        for (;count>0;count--)
+                div=div*10;
+
+        num=num+(frac/div);
+
+        return num*sign;
+}
