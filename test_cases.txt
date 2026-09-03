@@ -1,0 +1,57 @@
+TEST CASES
+==========
+
+my_atoi() TEST CASES
+--------------------
+
+1. Positive number
+Input: 123
+Expected Output: 123
+
+2. Negative number
+Input: -456
+Expected Output: -456
+
+3. Positive sign
+Input: +789
+Expected Output: 789
+
+4. Zero
+Input: 0
+Expected Output: 0
+
+5. Number followed by invalid character
+Input: 123abc
+Expected Output: 123
+
+6. Negative number followed by invalid character
+Input: -456xyz
+Expected Output: -456
+
+
+my_atof() TEST CASES
+--------------------
+
+1. Positive decimal
+Input: 123.45
+Expected Output: 123.450000
+
+2. Negative decimal
+Input: -45.67
+Expected Output: -45.670000
+
+3. Positive sign with decimal
+Input: +12.50
+Expected Output: 12.500000
+
+4. Zero decimal
+Input: 0.0
+Expected Output: 0.000000
+
+5. Decimal followed by invalid character
+Input: 123.45abc
+Expected Output: 123.450000
+
+6. Integer without decimal point
+Input: 100
+Expected Output: 100.000000
